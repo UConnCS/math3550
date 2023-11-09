@@ -1,0 +1,66 @@
+---
+title: "R Unit Test Medved"
+output: html_document
+date: "2023-11-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Unit Test Medved
+
+1.  Briefly explain the differences between writing/running code in the Console vs the Source Pane.
+
+-   The console is used to run code line by line, while the source pane is used to run code all at once. The console is also used to see the output of the code, while the source pane is used to write the code.
+
+2.  What is the main benefit of creating a .Rproj file?
+
+-   The main benefit of creating a .Rproj file is that it allows you to save your larger projects as a collective of files, and is used to open the project in RStudio. It also allows a set of configuration values to be saved and shared between people easily.
+
+3.  Briefly explain the difference between what the "Run" and "Source" bottons do in a R Script file.
+
+-   The "Run" button displays a dropdown of options of how to run your code (line, selection, entire document, etc.), while the "Source" button runs the entire document.
+
+4.  Briefly explain the difference between a matrix and a dataframe.
+
+-   A matrix is an n-dimensional array containing data of the same type, while a dataframe can be thought of as a mini excel table with different datatypes, headers, and other useful features.
+
+5.  Briefly explain the benefit of assigning variables to the factor type.
+
+-   The benefit of assigning variables to the factor type is that it allows you to assign labels to the different levels of the variable, which can be useful for categorical data.
+
+6.  Briefly explain the difference in purpose between the following two lines of code:
+
+``` r
+install.packages("dplyr")
+library(dplyr)
+```
+
+-   The first line of code installs a library named "dplyr", whereas the second line of code loads the library "dplyr" into the current R session so it can be utilized by the project.
+
+7.  Briefly explain what header = TRUE does in the following code:
+
+``` r
+my_data <- read.csv("unittest.csv", header = TRUE)
+```
+
+-   The `header = TRUE` option in the above code snippet tells the CSV parser that the first line is the headers line, aka the column names, otherwise it will incorrectly parse data that has headers if you do not tell it that those headers are there.
+
+8.  Briefly explain the difference in purpose of the train and test datasets when modeling.
+
+-   The training dataset is used to train the model, while the testing dataset is used to test the model. The training dataset is used to build the model, while the testing dataset is used to evaluate the model.
+
+9.  Identify two reasons why the following code will not work:
+
+``` r
+mult <- function(x,y)
+  my_temp <- x*y
+  return(my_temp)
+}
+
+new_var <- my_temp + mult(4,5)
+```
+
+-   The first reason why this code will not work is because the `my_temp` variable is defined in the `mult` function scope, thus you can't reference it outside of the function. You can define one outside of the function scope and use that, but it is not good practice due to overlapping variable names in this case.
+-   The second reason why this code will not work is because there is no opening `{` on the first line, therefore the closing `}` on the fourth line matches up to nothing, thus a syntax error is thrown.
